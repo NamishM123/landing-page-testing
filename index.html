@@ -31,7 +31,6 @@
       }
       html {
         scroll-behavior: smooth;
-        scroll-snap-type: y proximity;
       }
       body {
         font-family: var(--sans);
@@ -42,7 +41,7 @@
       }
 
       section, footer {
-        scroll-snap-align: start;
+        scroll-snap-align: none;
       }
 
       /* ── NAV ── */
@@ -891,7 +890,7 @@
       }
       @keyframes floatPhone {
         0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-10px); }
+        50% { transform: translateY(-18px); }
       }
       .fade-in {
         opacity: 0;
