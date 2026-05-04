@@ -878,14 +878,18 @@
         }
       }
       .hero-mountains {
+        opacity: 0;
         animation: mountainDrift 8s ease-in-out infinite alternate;
+        transition: opacity 0.7s ease;
+      }
+      .hero-mountains.loaded {
+        opacity: 1;
       }
       @keyframes mountainDrift {
         from { transform: translateY(0) scale(1); }
         to { transform: translateY(8px) scale(1.01); }
       }
-      .phone-img-col img,
-      .how-phone {
+      .phone-img-col img {
         animation: floatPhone 4.5s ease-in-out infinite;
       }
       @keyframes floatPhone {
@@ -974,7 +978,7 @@
             <a href="#action" class="btn-ghost">Learn more</a>
           </div>
         </div>
-        <img class="hero-mountains" src="/landing/hero.svg" alt="">
+        <img class="hero-mountains" src="/landing/hero.svg" alt="" onload="this.classList.add('loaded')">
       </section>
 
       <!-- TAKE ACTION -->
@@ -1270,6 +1274,11 @@
       document.querySelectorAll('.fade-in').forEach((el) => {
         fadeObserver.observe(el);
       });
+
+      const heroMountains = document.querySelector('.hero-mountains');
+      if (heroMountains && heroMountains.complete) {
+        heroMountains.classList.add('loaded');
+      }
     </script>
   </body>
 </html>
