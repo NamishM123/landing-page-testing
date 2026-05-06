@@ -879,15 +879,10 @@
       }
       .hero-mountains {
         opacity: 0;
-        animation: mountainDrift 8s ease-in-out infinite alternate;
         transition: opacity 0.7s ease;
       }
       .hero-mountains.loaded {
         opacity: 1;
-      }
-      @keyframes mountainDrift {
-        from { transform: translateY(0) scale(1); }
-        to { transform: translateY(8px) scale(1.01); }
       }
       .fade-in {
         opacity: 0;
